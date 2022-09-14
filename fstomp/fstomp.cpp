@@ -74,7 +74,7 @@ int wmain(int argn, wchar_t* argc[])
     int64_t LEN = _ftelli64(f);
     if (LEN <= 0)
     {
-        std::wcerr << L"File " << filename << L" has zero length, or is not a file\n";
+        if (LEN) std::wcerr << L"File " << filename << L" is not a file\n";
         return 0;
     }
 
