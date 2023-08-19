@@ -45,10 +45,9 @@ int wmain(int argn, wchar_t* argc[])
         return -1;
     }
 
-//    srand((unsigned)time(nullptr));
-
     auto msec = std::chrono::duration_cast<std::chrono::duration<uint64_t, std::milli>>(std::chrono::system_clock::now().time_since_epoch()).count();
     srand((unsigned)(msec & 0x7FFF));
+// was:    srand((unsigned)time(nullptr));
 
     if (argn < 2)
     {
